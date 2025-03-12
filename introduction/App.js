@@ -1,12 +1,16 @@
+import { Alert } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-import { FlexDemo } from "./components/FlexDemo/FlexDemo";
-import { AgeCounter } from "./components/AgeCounter/AgeCounter";
+import { Child } from "./components/Child/Child";
 
 export default function App() {
-  return (  
+  function hello(name) {
+    Alert.alert(`Bonjour ${name} !`);
+  }
+
+  return (
     <SafeAreaProvider>
       <SafeAreaView style={{ flex: 1 }}>
-        <AgeCounter />
+        <Child onPress={hello} />
       </SafeAreaView>
     </SafeAreaProvider>
   );
